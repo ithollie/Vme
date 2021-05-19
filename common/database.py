@@ -1,22 +1,23 @@
 import pymongo
+import urllib 
 import os
 
 class Database(object):
-    
-    Uri = "mongodb://127.0.0.1:27017"
-    uri = "mongodb://ithollie:hawaibrahB1a@ds023478.mlab.com:23478/full_stack?retryWrites=true&w=majority"
-    online = "mongodb+srv://new_user_12:hawaibrahB1a1@cluster0.jdn8r.mongodb.net/full_stack?retryWrites=true&w=majority"
-    
     DATABASE = None
 
-    def __init(self):
+    def __init__(self):
         pass
-
+    
     @staticmethod
     def initialize():
-        client = pymongo.MongoClient(Database.connectUrl(Database.Uri, Database.online))
-        Database.DATABASE = client['full_stack']
-
+            
+            username = urllib.parse.quote_plus('hawaibrahB1a1')
+            password = urllib.parse.quote_plus('hawaibrahB1a1')
+            
+            #cli = pymongo.MongoClient("mongodb://%s:%s@cluster0.scnlr.mongodb.net/vibeDatabase?retryWrites=true&w=majority" % (username, password))
+            client = pymongo.MongoClient("mongodb+srv://%s:%s@cluster0.scnlr.mongodb.net/vibeDatabase?retryWrites=true&w=majority" % (username, password))
+            Database.DATABASE = client['vibeDatabase']
+            
     @staticmethod
     def connectUrl(uri_connection, online_connection):
         if online_connection is not None:
@@ -38,11 +39,6 @@ class Database(object):
     def insert(collection, data):
         Database.DATABASE[collection].insert(data)
 
-    # @staticmethod
-    # def createCollections(collectionOne, collectionTwo):
-    #     Database.DATABASE.create_collection(collectionOne)
-    #     Database.DATABASE.create_collection(collectionTwo)
-        
     @staticmethod
     def updates(collection, data, data1):
         Database.DATABASE[collection].update(data, data1)

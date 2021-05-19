@@ -1,16 +1,12 @@
 from flask import Flask, render_template, escape,make_response, redirect,session, request,jsonify,json, flash,url_for
-from flask_mail import Mail
-
+from sendemail.mailer import Mail
 from RegisterForm.RegisterForm import RegForm as Form
-#from loginFrom.LoginForm import  as LogForm
 from hashlib import md5
-
 import os
 import datetime
-# werkzeug folder and  classes
-from werkzeug.utils import secure_filename
+import uuid
 
-#models folder  and  classes.
+from werkzeug.utils import secure_filename
 from models.requests.Request import  Request
 from models import constants as UserConstants
 from models.System_file import File_system
@@ -27,18 +23,12 @@ from models.flask_wtf.login import LoginForm
 from models.flask_wtf.blogform import BlogForm
 from models.flask_wtf.editeform import EditeForm
 from models.flask_wtf.commentform import CommentForm
-from models import constants as UserConstants
 
-#common folder and  classes.
 from common.Utils import utils
 from common.Utils import utils
 from common.database import Database
-
-#bson object and classes
 from bson.objectid import ObjectId
 
-import uuid
-#starting of  the  problem.
 app = Flask(__name__)
 UPLOAD_FOLDER = os.path.basename('static') + "/uploads"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -667,6 +657,8 @@ def register_process():
             confirm  = request.form['confirm'].lower()
          
             if  Users.get_by_email(request.form['email'].lower()) != True and  reg.PasswordMatch(password, confirm) == True and reg.notEmpty() == True:
+                mail =  Mail("boysthollie@gmail.com", email)
+                mail.sendMail()
                 f.save(os.path.join(os.getcwd() +'/static/uploads/reg', filename))
                 print(reg.notEmpty())
                 Users.registration(request.form['firstname'], request.form['lastname'] , request.form['email'], request.form['password'], request.files['file'].filename, image=image)
@@ -775,10 +767,9 @@ def welcome():
             userblog   = Users.blogs( "blogs" ,item['email'])
             email      = request.cookies.get('login_email') 
             user       = Database.find_one('user', {"email":email})
-            
         
             items = Database.find_one(UserConstants.COLLECTION,{"email":request.cookies.get('login_email')})
-            print(file)
+            
             img = File_system.image(request.cookies.get('login_email'))
             return render_template('index.html',requests=requests, messageRe=messageRe,friends=friends, email=request.cookies.get('login_email'),firstname=items['firstname'],_id=items['_id'],lastname = items['lastname'],date=date, login='true',image=items['image'],blogs=blogs, posts=postsu , userblog=userblog,user=user, Database=Database, youtube=youtube)
           

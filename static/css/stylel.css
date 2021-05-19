@@ -23,7 +23,7 @@ html, body{
   box-shadow:0 0 0px rgba(0,0,0,0.8);
 }
 #colors{
-  background-color:yellow;
+  background-color:;
   height:50%;
   -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
   -moz-box-shadow:0 0 19px rgba(0,0,0,0.8);
@@ -84,7 +84,7 @@ html, body{
   position:relative;
   width:auto;
   margin:auto;
-  background-color:white;
+  background-color:;
   /* //border-radius:50px; */
 
 }
@@ -135,7 +135,7 @@ h2{
 ruled {
     height: 10%;
     color:green;
-    background-color:blue;
+    background-color:;
     font-size: 0;
     border: 0;
 }
@@ -212,7 +212,7 @@ ruled {
   float:left;
   width:auto;
   padding-top: 20px;
-  background-color:red;
+  background-color:;
 }
 #header  ul li{
   display:inline;
@@ -221,10 +221,8 @@ ruled {
 }
 #te{
   color:white;
-  background-color:#0b1516;
-  //opacity:0.8;
-  position:relative;
-  //z-index: 10000;
+  background-color:;
+  
   padding:0px;
   margin:0px;
   height:60px;
@@ -262,7 +260,7 @@ te  ul li a{
 
 }
 #containere{
-  background-color:lightgray;
+  background-color:;
   color:black;
   padding:0px;
   height:30%;

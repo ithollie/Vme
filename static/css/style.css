@@ -10,14 +10,14 @@ html, body{
   padding:0px;
   margin:0px;
   overflow-x:hidden;
-  background-color:white;
+  background-color:;
   
 }
 body{
   overflow-y:hidden;
 }
 .btn:hover, .btn-large:hover, .btn-small:hover{
-      background-color: #151e1d;
+      background-color:;
 }
 #infoe{
   visibility:visible;
@@ -144,8 +144,7 @@ ruled {
     border: 0;
 }
 #wrapper{
-  background-color:#ffffff;
-  color:$color;
+  background-color:#24c4e4d9;
   width:70%;
   height:auto;
   margin:auto;
@@ -168,7 +167,7 @@ ruled {
   float:left;
   width: 50%;
   height: 5%;
-  background:white;
+  background:;
 }
 #comei1 ul{
   width:100%;
@@ -190,7 +189,7 @@ ruled {
   top:95px;
   position: relative;
   width:75%;
-  background-color:#ffffff;
+  background-color:;
   margin:auto;
   visibility:hidden;
 }
@@ -241,14 +240,14 @@ nav {
    z-index: 10000;
    top:0px;
    width:100%; height:10%;
-   background-color:#313146;
+   background-color:;
 }
 #titlelogins{
    position: relative;
    z-index: 10000;
    top:92px;
    width:100%; height:10%;
-   background-color:#313146;
+   background-color:;
 }
 .maing{
   width: 16.6666666667%;
@@ -272,10 +271,10 @@ nav {
   max-width:50%;
 }
 #VOnediv{
-  width:100%;height:15%;background-color:#ffffff;    padding-top: 1px
+  width:100%;height:15%;background-color:;    padding-top: 1px
 }
 #VTwodiv{
-  width:100%;height:15%;background-color:#ffffff;    padding-top: 1px
+  width:100%;height:15%;background-color:;    padding-top: 1px
 }
 #header{
   color:white;
@@ -284,7 +283,6 @@ nav {
   margin:0px;
   z-index: 10000;
   width:100%;
-  //width:calc(calc(60vw + 1vh) + 0px);
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
@@ -386,7 +384,7 @@ li{
   text-decoration:none;
 }
 #container{
-  background-color:lightgray;
+  background-color:;
   color:black;
   padding:0px;
   height:30%;

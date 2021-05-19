@@ -1,14 +1,13 @@
 from flask import Flask, session
 from common.database import Database
 from models.admin import *
-from  models import constants as UserConstants
+from models import constants as UserConstants
 from models.System_file import File_system
-import  models.user.error as UserErrors
 from common.Utils import utils
-from sendemail.eul import Emails
 import datetime
 import uuid
 import os
+import  models.user.error as UserErrors
 
 class Request(object):
 	def __init__(self,name,email,user_id,buttonstate,accept ,count,collection,receiver, date=datetime.datetime.utcnow(), _id=None):

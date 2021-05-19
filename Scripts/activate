@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\software_Engineer\Software_Engineer_python\vme"
+VIRTUAL_ENV="C:\software_Engineer\Software_Engineer_python\flask_apps\vibe"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
@@ -54,7 +54,7 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1="(vme) ${PS1:-}"
+    PS1="(vibe) ${PS1:-}"
     export PS1
 fi
 
